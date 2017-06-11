@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">"Concert Goer "</string>
     <string name="edit_message">Enter an artist</string>
-    <string name="button_send">Enter</string>
+    <string name="button_send">Add</string>
 </resources>
