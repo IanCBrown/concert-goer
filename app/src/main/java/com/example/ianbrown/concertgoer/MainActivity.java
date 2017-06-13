@@ -40,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //sketchy hard coding incoming, don't cringe
+                ArrayList<String> defaultBandNamesList = new ArrayList<>(Arrays.asList(defaultBandNames));
+                if (defaultBandNamesList.equals(arrayList)) {
+                    arrayList.clear();
+                }
                 String newBand = txtInput.getText().toString();
                 adapter.add(newBand);
                 txtInput.getText().clear();
