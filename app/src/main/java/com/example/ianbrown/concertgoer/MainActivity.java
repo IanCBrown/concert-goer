@@ -46,15 +46,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //sketchy hard coding incoming, don't cringe
                 ArrayList<String> defaultBandNamesList = new ArrayList<>(Arrays.asList(defaultBandNames));
-                if (defaultBandNamesList.equals(arrayList)) {
-                    arrayList.clear();
-                }
-                else if (!txtInput.getText().toString().isEmpty()) {
-                    String newBand = txtInput.getText().toString();
-                    adapter.add(newBand);
-                    txtInput.getText().clear();
-                }
-        }
+                addBandsToList(defaultBandNamesList, txtInput);
+             }
         });
 
         txtInput.setOnKeyListener(new View.OnKeyListener() {
@@ -63,18 +56,22 @@ public class MainActivity extends AppCompatActivity {
                 //sketchy hard coding incoming, don't cringe
                 ArrayList<String> defaultBandNamesList = new ArrayList<>(Arrays.asList(defaultBandNames));
                 if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
-                    if (defaultBandNamesList.equals(arrayList)) {
-                        arrayList.clear();
-                    }
-                    else if (!txtInput.getText().toString().isEmpty()) {
-                        String newBand = txtInput.getText().toString();
-                        adapter.add(newBand);
-                        txtInput.getText().clear();
-                    }
+                    addBandsToList(defaultBandNamesList, txtInput);
                     return true;
                 }
                 return false;
             }
         });
+    }
+
+    public void addBandsToList(ArrayList<String> defaultBandNamesList, EditText txtInput) {
+        if (defaultBandNamesList.equals(arrayList)) {
+            arrayList.clear();
+        }
+        else if (!txtInput.getText().toString().isEmpty()) {
+            String newBand = txtInput.getText().toString();
+            adapter.add(newBand);
+            txtInput.getText().clear();
+        }
     }
 }
