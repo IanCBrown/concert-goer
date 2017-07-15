@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] defaultBandNames = {"Band", "names", "would", "go", "here"};
+    String[] defaultBandNames = {"Band", "names", "go", "here"};
     ListView lv;
 
     private ArrayList<String> arrayList;
