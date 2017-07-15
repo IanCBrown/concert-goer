@@ -2,6 +2,7 @@ package com.example.ianbrown.concertgoer;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         txtInput = (EditText) findViewById(R.id.editText);
 
         Button b = (Button) findViewById(R.id.button);
+
+        //TODO Create method for band name validation
+
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,11 +49,32 @@ public class MainActivity extends AppCompatActivity {
                 if (defaultBandNamesList.equals(arrayList)) {
                     arrayList.clear();
                 }
-                String newBand = txtInput.getText().toString();
-                adapter.add(newBand);
-                txtInput.getText().clear();
+                else if (!txtInput.getText().toString().isEmpty()) {
+                    String newBand = txtInput.getText().toString();
+                    adapter.add(newBand);
+                    txtInput.getText().clear();
+                }
         }
         });
 
+        txtInput.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                //sketchy hard coding incoming, don't cringe
+                ArrayList<String> defaultBandNamesList = new ArrayList<>(Arrays.asList(defaultBandNames));
+                if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+                    if (defaultBandNamesList.equals(arrayList)) {
+                        arrayList.clear();
+                    }
+                    else if (!txtInput.getText().toString().isEmpty()) {
+                        String newBand = txtInput.getText().toString();
+                        adapter.add(newBand);
+                        txtInput.getText().clear();
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }
