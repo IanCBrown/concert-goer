@@ -2,4 +2,9 @@
     <string name="app_name">"Concert Goer "</string>
     <string name="edit_message">Enter an artist</string>
     <string name="button_send">Add</string>
+    <string name="context_menu_edit">Edit</string>
+    <string name="context_menu_delete">Delete</string>
+    <string name="context_menu_delete_all">Delete All</string>
+    <string name="list_cleared">List Cleared</string>
+    <string name="item_removed">Item Removed</string>
 </resources>
