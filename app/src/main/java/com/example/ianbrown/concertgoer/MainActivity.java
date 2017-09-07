@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //sketchy hard coding incoming, don't cringe
                 ArrayList<String> defaultBandNamesList = new ArrayList<>(Arrays.asList(defaultBandNames));
                 addBandsToList(defaultBandNamesList, txtInput);
              }
@@ -58,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         txtInput.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-                //sketchy hard coding incoming, don't cringe
                 ArrayList<String> defaultBandNamesList = new ArrayList<>(Arrays.asList(defaultBandNames));
                 if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
                     addBandsToList(defaultBandNamesList, txtInput);
