@@ -5,4 +5,4 @@ A simple Android app that allows you to keep track of all of the artists you've 
 
 WIP 
 
-![alt text](https://i.imgur.com/a8Or974.png)
+![alt text](https://i.imgur.com/VxvPDyz.png)
